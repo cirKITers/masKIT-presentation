@@ -51,7 +51,18 @@
 					<img src="images/dropout.png" alt="Source: https://towardsdatascience.com/the-less-is-more-of-machine-learning-1f571c0d4481"/>
 				</section>
 				<section>
+					<h2>Questions</h2>
+					<p>Do dropouts have a similar effect to quantum circuits as in Machine Learning?</p>
+					<p>How do they influence circuits of varying depth and height?</p>
+					<p>To which ansätze are dropouts applicable if at all?</p>
+				</section>
+				<section>
 					<h2>Experimental Setup</h2>
+					<ul>
+						<li>Pennylane to implement hybrid quantum-classical use case</li>
+						<li>Layered circuit ansatz as a template for scaling</li>
+					</ul>
+					<img src="images/pennylane.png" height="50" />
 				</section>
 				<section>
 					<h2>Circuit Ansatz</h2>
@@ -59,6 +70,19 @@
 						<li><small>Circuit based on ansatz from McClean, J.R., Boixo, S., Smelyanskiy, V.N. et al. <em>Barren plateaus in quantum neural network training landscapes</em>. Nat Commun 9, 4812 (2018). https://doi.org/10.1038/s41467-018-07090-4</small></li>
 						<img src="images/circuit.png"/>
 					</ul>
+				</section>
+				<section>
+					<h2>Algorithm</h2>
+					<pre data-id="code-animation"><code class="hljs" data-trim>
+						if cost does not change for several steps:
+							create variations of current circuit
+							perform another training step
+							measure costs for variations
+							pick circuit with lowest cost
+						else:
+							perform another training step
+							measure current cost
+					</code></pre>
 				</section>
 				<section>
 					<h2>Results</h2>
